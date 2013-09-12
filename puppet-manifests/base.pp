@@ -91,8 +91,8 @@ class vagrantvm {
   include redis
 }
 
-class { "customsettings":
-}
+#class { "customsettings":
+#}
 
 include vagrantsetup
 include vagrantvm
