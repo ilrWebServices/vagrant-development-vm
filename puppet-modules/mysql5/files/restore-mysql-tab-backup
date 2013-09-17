@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if [ $1 = "--help" -o $1 = "-h" ] ; then
+  echo "This simple program restores a database from a specially formatted backup structure."
+  echo "The program requires two parameters. The first is the database to restore to, the second is the path to the directory that contains the backup."
+  echo "EXAMPLE: restore-db-from-backup zivtech /home/webadmin/zivtech_backup"
+  exit 0
+fi
+if [ ! $1 ] ; then
+  echo "You must specify a database to restore to and a directory that contains the files to restore from."
+  exit 1
+fi
+if [ ! $2 ] ; then
+  echo "You must specify a database to restore to and a directory that contains the files to restore from."
+  exit 1
+fi
+echo "Rebuilding database structure..."
+cat $2/*.sql | mysql $1
+if [ $? -ne 0 ] ; then
+  echo "Importing database structure failed."
+  exit 1
+fi
+echo "Importing data..."
+mysqlimport --local $1 $2/*.txt
+exit $?
+

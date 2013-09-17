@@ -16,13 +16,12 @@ This repository is based on [Zivtech's development virtual server](https://githu
   2. Clone this repository `git@github.com:ilrWebServices/vagrant-development-vm.git`
   3. Clone a website respository (such as the [ILR Website](https://github.com/ilrWebServices/ilr-website))
   4. Make a Vagrantfile from the Vagrantfile.example file in the root of this repository that points to the website you cloned in step 3.
-  5. Prepare the submodules with `git submodule update --init` from the root of this projct. 
-  6. Run `vagrant up`
-  7. ssh into the server with `vagrant ssh`
-  8. Run `sudo apt-get update && sudo apt-get upgrade` on the server (click space-bar and hit enter if/when asked about grub)
-  9. Enable Drush on the server (see section below)
-  10. `exit` the server
-  11. Finish the build with `vagrant provision`
+  5. Run `vagrant up`
+  6. ssh into the server with `vagrant ssh`
+  7. Run `sudo apt-get update && sudo apt-get upgrade` on the server (click space-bar and hit enter if/when asked about grub)
+  8. Enable Drush on the server (see section below)
+  9. `exit` the server
+  10. Finish the build with `vagrant provision`
   11. Reload vagrant with `vagrant reload`
  
 You should now have a working Virtual Server, which can be accessed at `33.33.33.40`. If you are setting up the [ILR Website](https://github.com/ilrWebServices/ilr-website), follow additional instructions there.
