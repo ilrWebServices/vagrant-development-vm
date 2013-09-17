@@ -78,21 +78,7 @@ class vagrantvm {
     groups => ['dialout']
   }
 
-  class { "solr":
-    webadmingroup => $webadmingroup,
-  }
-
-  include drush
-  class { "drushfetcher":
-    fetcher_host => 'https://extranet.zivtech.com',
-  }
-  include drushphpsh
-
-  include redis
 }
-
-#class { "customsettings":
-#}
 
 include vagrantsetup
 include vagrantvm
