@@ -8,7 +8,7 @@ This repository is based on [Zivtech's development virtual server](https://githu
 
   * On Windows, you will need to have access to an ssh client, such as [Git bash](http://windows.github.com/) (which is installed with GitHub for Windows), [Cygwin](http://www.cygwin.com/), or [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html). 
   * [Vagrant](http://vagrantup.com)
-  * [VirtualBox](https://www.virtualbox.org/)
+  * [VirtualBox](https://www.virtualbox.org/) (tested on V1.2.7)
 
 ## Installation
 
