@@ -31,7 +31,7 @@ You should now have a working Virtual Server, which can be accessed at `33.33.33
 Assuming you are setting up the site for a project such as the [ILR Website](https://github.com/ilrWebServices/ilr-website), you will need to configure mysql on vagrant to accept connections from your host environment. The instructions are as follows: 
 
   1. `vagrant ssh`
-  2. Edit the my.cnf file with `sudo vi /etc/mysql`
+  2. Edit the my.cnf file with `sudo vi /etc/mysql/my.cnf`
   3. Update the bind_address to `0.0.0.0` and save the file
   4. Type `mysql`
   5. Issue the command `GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;`
