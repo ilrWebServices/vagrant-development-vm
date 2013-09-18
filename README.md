@@ -15,7 +15,7 @@ This repository is based on [Zivtech's development virtual server](https://githu
   1. Navigate to your GitHub directory (if installed with GitHub for windows), or your usual development directory. 
   2. Clone this repository `git@github.com:ilrWebServices/vagrant-development-vm.git`
   3. Clone a website respository (such as the [ILR Website](https://github.com/ilrWebServices/ilr-website))
-  4. Make a Vagrantfile from the Vagrantfile.example file in the root of this repository that points to the website you cloned in step 3.
+  4. Type `cp Vagrantfile.example Vagrantfile`. This creates a working copy Vagrantfile in the root of this repository that points your virtual web server's docroot to the website you cloned in step 3.
   5. Run `vagrant up`
   6. ssh into the server with `vagrant ssh`
   7. Run `sudo apt-get update && sudo apt-get upgrade` on the server (click space-bar and hit enter if/when asked about grub)
