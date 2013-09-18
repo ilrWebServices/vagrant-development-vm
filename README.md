@@ -15,7 +15,7 @@ This repository is based on [Zivtech's development virtual server](https://githu
   1. Navigate to your GitHub directory (if installed with GitHub for windows), or your usual development directory. 
   2. Clone this repository `git@github.com:ilrWebServices/vagrant-development-vm.git`
   3. Clone a website respository (such as the [ILR Website](https://github.com/ilrWebServices/ilr-website))
-  4. Make a Vagrantfile from the Vagrantfile.example file in the root of this repository that points to the website you cloned in step 3.
+  4. Type `cp Vagrantfile.example Vagrantfile`. This creates a working copy Vagrantfile in the root of this repository that points your virtual web server's docroot to the website you cloned in step 3.
   5. Run `vagrant up`
   6. ssh into the server with `vagrant ssh`
   7. Run `sudo apt-get update && sudo apt-get upgrade` on the server (click space-bar and hit enter if/when asked about grub)
@@ -30,9 +30,7 @@ You should now have a working Virtual Server, which can be accessed at `33.33.33
 
 Assuming you are setting up the site for a project such as the [ILR Website](https://github.com/ilrWebServices/ilr-website), you will need to configure mysql on vagrant to accept connections from your host environment. The instructions are as follows: 
 
-  1. `vagrant ssh`
-  2. Edit the my.cnf file with `sudo vi /etc/mysql`
-  3. Update the bind_address to `0.0.0.0` and save the file
-  4. Type `mysql`
-  5. Issue the command `GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;`
-  6. `exit` ssh and `vagrant reload` (or `vagrant provision`, if following installation steps)
+  1. Type `mysql`
+  2. Issue the command `GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;`
+  3. Drush commands run on your host machine now have rights to connect as `root` to the mysql service on the virtual server
+  4. `exit` ssh and `vagrant reload` (or `vagrant provision`, if following installation steps)
