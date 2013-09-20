@@ -55,6 +55,13 @@ class php53::dev (
       owner => $webadminuser,
       group => $webadmingroup,
     }
+    file { "/etc/apache2/sites-available/default":
+      #require => Package['php53'],
+      ensure => present,
+      source => "puppet:///modules/php53/apache2-default",
+      owner => $webadminuser,
+      group => $webadmingroup,
+    }
   }
   else {
 
@@ -68,6 +75,13 @@ class php53::dev (
       ensure => link,
       target => "/etc/apache2/sites-available/phpmyadmin",
       #notify => Service['apache2'],
+    }
+    file { "/etc/apache2/sites-available/default":
+      #require => Package['php53'],
+      ensure => present,
+      source => "puppet:///modules/php53/apache2-default",
+      owner => $webadminuser,
+      group => $webadmingroup,
     }
   }
 
