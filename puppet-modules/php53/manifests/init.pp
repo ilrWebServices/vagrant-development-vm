@@ -170,6 +170,13 @@ class php53(
     require => Package['php53'],
   }
 
+  # enable vhost_alias
+  exec { "/usr/sbin/a2enmod vhost_alias":
+    path => "/usr/bin:/usr/sbin:/bin",
+    unless => "/usr/bin/test -f /etc/apache2/mods-enabled/vhost_alias.load",
+    require => Package['php53'],
+  }
+
   # unfotunately ubuntu packages use deprecated comments
   exec { 'clean deprecated comments in /etc/php5/cli':
     command => "find /etc/php5/cli/conf.d/* -type f -exec sed -i 's/#/;/g' {} \\;",
