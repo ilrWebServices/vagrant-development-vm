@@ -14,16 +14,16 @@ This repository is based on [Zivtech's development virtual server](https://githu
 
   1. Navigate to your GitHub directory (if installed with GitHub for windows), or your standard development directory. *Note that the current vhost setup fails if you're using the ~/Sites folder on OSX*
   2. Clone this repository `git@github.com:ilrWebServices/vagrant-development-vm.git`
-  3. Clone a website respository (such as the [ILR Website](https://github.com/ilrWebServices/ilr-website)). Be sure to uncomment the `# RewriteBase /` (around line 110) of the .htaccess file of the repository. 
+  3. Clone a website respository (such as the [ILR Website](https://github.com/ilrWebServices/ilr-website)).
   4. `cd vagrant-development-vm`
-  4. `cp Vagrantfile.example Vagrantfile`. This creates a working copy Vagrantfile in the root of this repository that points your virtual web server's docroot to vm's parent folder.
-  5. Run `vagrant up`
-  6. ssh into the server with `vagrant ssh`
-  7. Run `sudo apt-get update && sudo apt-get upgrade` on the server (click space-bar and hit enter if/when asked about grub)
-  8. Enable Drush on the server (see section below)
-  9. `exit` the server
-  10. Finish the build with `vagrant provision`
-  11. Reload vagrant with `vagrant reload`
+  5. `cp Vagrantfile.example Vagrantfile`. This creates a working copy Vagrantfile in the root of this repository that points your virtual web server's docroot to vm's parent folder.
+  6. Run `vagrant up`
+  7. ssh into the server with `vagrant ssh`
+  8. Run `sudo apt-get update && sudo apt-get upgrade` on the server (click space-bar and hit enter if/when asked about grub)
+  9. Enable Drush on the server (see section below)
+  10. `exit` the server
+  11. Finish the build with `vagrant provision`
+  12. Reload vagrant with `vagrant reload`
  
 You should now have a working Virtual Server, which can be accessed at `33.33.33.40`. If you are setting up the [ILR Website](https://github.com/ilrWebServices/ilr-website), follow additional instructions there.
 
