@@ -35,9 +35,9 @@ Vagrant.configure('2') do |config|
     require 'rbconfig'
     is_windows = (RbConfig::CONFIG['host_os'] =~ /mswin|mingw|cygwin/)
     if not is_windows
-      config.vm.synced_folder "../ilr-website/docroot", "/var/www",  :nfs => true
+      config.vm.synced_folder "..", "/var/www",  :nfs => true
     else
-      config.vm.synced_folder "../ilr-website/docroot", "/var/www"
+      config.vm.synced_folder "..", "/var/www"
     end
   end
 end
